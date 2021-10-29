@@ -6,10 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: 'cimg/base:stable'
-      steps:
-        - checkout
-        - ruby/install:
-            version: '2.7'
-        - ruby/install-deps
-        - run: bundle instal
+      - image: 'cimg/ruby:2.7.0'
+    steps:
+      - checkout
+      - run: bundle install
